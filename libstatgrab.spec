@@ -1,5 +1,5 @@
-Summary:	easy-to-use interface for accessing system statistics and information
-Summary(pl):	³atwy w u¿yciu interfejs 
+Summary:	Easy-to-use interface for accessing system statistics and information
+Summary(pl):	£atwy w u¿yciu interfejs dostêpu do statystyk i informacji o systemie
 Name:		libstatgrab
 Version:	0.8.2
 Release:	1
@@ -18,8 +18,8 @@ on Linux, FreeBSD, and Solaris. The package also includes two tools:
 saidar provides a curses-based interface for viewing live system
 statistics, and statgrab is a sysctl-like interface to the statistics.
 
-%description -l pl
-Biblioteka libstatgrab dostarcza ³atwego w u¿yciu interfejsu do 
+#%description -l pl
+#Biblioteka libstatgrab dostarcza ³atwego w u¿yciu interfejsu do 
 
 %package devel
 Summary:	Header files for libstatgrab library

@@ -19,7 +19,13 @@ saidar provides a curses-based interface for viewing live system
 statistics, and statgrab is a sysctl-like interface to the statistics.
 
 #%description -l pl
-#Biblioteka libstatgrab dostarcza ³atwego w u¿yciu interfejsu do 
+Biblioteka libstatgrab dostarcza ³atwego w u¿yciu interfejsu dostêpu do 
+informacji i statystyk systemowych. Dostêpne statystyki obejmuj± CPU,
+obci±¿enie, pamiêæ swap, dyskowe i sieciowe operacje we./wy. .
+libstatgrab zosta³ stworzony by dzia³aæ na linuksie, FreeBSD i Solarisie.
+Pakiet zawiera tak¿e dwa narzêdzia: saidar dostarcza bazuj±cego na curses
+interfejsu do przegl±dania statystyk systemu i statgrab, który jest
+interfejsem podobnym do sysctl dla statystyk.
 
 %package devel
 Summary:	Header files for libstatgrab library

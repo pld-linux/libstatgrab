@@ -1,17 +1,18 @@
 Summary:	Easy-to-use interface for accessing system statistics and information
 Summary(pl):	£atwy w u¿yciu interfejs dostêpu do statystyk i informacji o systemie
 Name:		libstatgrab
-Version:	0.11
+Version:	0.11.1
 Release:	1
 License:	LGPL	
 Group:		Libraries
 Source0:	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
-# Source0-md5:	f6fde507207a8083ddd71c555e212a25
+# Source0-md5:	6d1e6980c39e505082e1c98c9fe81950
 Patch0:		%{name}-Makefile_fix.patch
 URL:		http://www.i-scream.org/libstatgrab/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
+BuildRequires:	linux-libc-headers >= 7:2.6.11.1-2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

@@ -1,12 +1,12 @@
 Summary:	Easy-to-use interface for accessing system statistics and information
 Summary(pl):	£atwy w u¿yciu interfejs dostêpu do statystyk i informacji o systemie
 Name:		libstatgrab
-Version:	0.10
+Version:	0.10.2
 Release:	1
 License:	LGPL	
 Group:		Libraries
-Source0:	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
-# Source0-md5:	547fc61b0c91b413e101197b58e804ff
+Source0:	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
+# Source0-md5:	3165015263a7e45e962e6bce27abfbe5
 Patch0:		%{name}-Makefile_fix.patch
 URL:		http://www.i-scream.org/libstatgrab/
 BuildRequires:	autoconf

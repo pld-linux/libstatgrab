@@ -8,30 +8,34 @@ Group:		Libraries
 Source0:	ftp://ftp.mirror.ac.uk/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
 # Source0-md5:	41ebe054a2579090e1e25ab998b08ed0
 URL:		http://www.i-scream.org/libstatgrab/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-The libstatgrab library provides an easy-to-use interface for accessing
-system statistics and information. Available statistics include CPU,
-Load, Memory, Swap, Disk I/O, and Network I/O. It was developed to work
-on Linux, FreeBSD, and Solaris. The package also includes two tools:
-saidar provides a curses-based interface for viewing live system
-statistics, and statgrab is a sysctl-like interface to the statistics.
+The libstatgrab library provides an easy-to-use interface for
+accessing system statistics and information. Available statistics
+include CPU, Load, Memory, Swap, Disk I/O, and Network I/O. It was
+developed to work on Linux, FreeBSD, and Solaris. The package also
+includes two tools: saidar provides a curses-based interface for
+viewing live system statistics, and statgrab is a sysctl-like
+interface to the statistics.
 
-#%description -l pl
-Biblioteka libstatgrab dostarcza ³atwego w u¿yciu interfejsu dostêpu do 
-informacji i statystyk systemowych. Dostêpne statystyki obejmuj± CPU,
-obci±¿enie, pamiêæ swap, dyskowe i sieciowe operacje we./wy. .
-libstatgrab zosta³ stworzony by dzia³aæ na linuksie, FreeBSD i Solarisie.
-Pakiet zawiera tak¿e dwa narzêdzia: saidar dostarcza bazuj±cego na curses
-interfejsu do przegl±dania statystyk systemu i statgrab, który jest
-interfejsem podobnym do sysctl dla statystyk.
+%description -l pl
+Biblioteka libstatgrab dostarcza ³atwego w u¿yciu interfejsu dostêpu
+do informacji i statystyk systemowych. Dostêpne statystyki obejmuj±
+CPU, obci±¿enie, pamiêæ swap, dyskowe i sieciowe operacje we./wy. .
+libstatgrab zosta³ stworzony by dzia³aæ na linuksie, FreeBSD i
+Solarisie. Pakiet zawiera tak¿e dwa narzêdzia: saidar dostarcza
+bazuj±cego na curses interfejsu do przegl±dania statystyk systemu i
+statgrab, który jest interfejsem podobnym do sysctl dla statystyk.
 
 %package devel
 Summary:	Header files for libstatgrab library
 Summary(pl):	Pliki nag³ówkowe biblioteki libstatgrab
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libstatgrab library.
@@ -43,7 +47,7 @@ Pliki nag³ówkowe biblioteki libstatgrab.
 Summary:	Static libstatgrab library
 Summary(pl):	Statyczna biblioteka libstatgrab
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libstatgrab library.
@@ -65,8 +69,6 @@ Statyczna biblioteka libstatgrab.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
-#install -d $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT

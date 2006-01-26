@@ -1,12 +1,12 @@
 Summary:	Easy-to-use interface for accessing system statistics and information
 Summary(pl):	£atwy w u¿yciu interfejs dostêpu do statystyk i informacji o systemie
 Name:		libstatgrab
-Version:	0.11.1
-Release:	1
+Version:	0.12
+Release:	0.1
 License:	LGPL	
 Group:		Libraries
 Source0:	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
-# Source0-md5:	6d1e6980c39e505082e1c98c9fe81950
+# Source0-md5:	fe8bf50490e3382c29da3a553bb7ca0e
 Patch0:		%{name}-Makefile_fix.patch
 URL:		http://www.i-scream.org/libstatgrab/
 BuildRequires:	autoconf
@@ -57,6 +57,29 @@ Static libstatgrab library.
 %description static -l pl
 Statyczna biblioteka libstatgrab.
 
+%package -n statgrab
+Summary:	sysctl-style interface to system statistics
+Group:		Applications/System
+Requires:	%{name} = %{version}-%{release}
+
+%description -n statgrab
+statgrab  provides a sysctl-style interface to all the system statistics
+available through libstatgrab. This is useful for applications that don't want
+to make library calls, but still want to access the statistics.
+
+An example of such an application is mrtg, for which scripts are provided to
+generate configuration files.
+
+%package -n saidar
+Summary:	A curses-based tool for viewing system statistics
+Group:		Applications/System
+Requires:	%{name} = %{version}-%{release}
+
+%description -n saidar
+saidar is a curses-based tool for viewing the system statistics available
+through libstatgrab. Statistics include CPU, processes, load, memory, swap,
+network I/O, disk I/O, and file system information.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -67,7 +90,11 @@ Statyczna biblioteka libstatgrab.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--with-curses-prefix=/usr \
+	--with-ncurses \
+	--disable-setgid-binaries \
+	--disable-setuid-binaries
 %{__make}
 
 %install
@@ -85,18 +112,29 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README PLATFORMS
-%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%{_mandir}/man3/statgrab*
 
 %files devel
 %defattr(644,root,root,755)
+%doc examples/*.c
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_includedir}/*
 %{_pkgconfigdir}/*.pc
 %{_mandir}/man3/sg_*
+%{_mandir}/man3/statgrab*
+
 
 %files static
 %defattr(644,root,root,755)
 %{_libdir}/lib*.a
+
+%files -n statgrab
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/statgrab*
+%{_mandir}/man1/statgrab*
+
+%files -n saidar
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/saidar
+%{_mandir}/man1/saidar.1*

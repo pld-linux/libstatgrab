@@ -59,26 +59,45 @@ Statyczna biblioteka libstatgrab.
 
 %package -n statgrab
 Summary:	sysctl-style interface to system statistics
+Summary(pl):	Podobny do sysctl interfejs do statystyk systemu
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
 %description -n statgrab
-statgrab  provides a sysctl-style interface to all the system statistics
-available through libstatgrab. This is useful for applications that don't want
-to make library calls, but still want to access the statistics.
+statgrab provides a sysctl-style interface to all the system
+statistics available through libstatgrab. This is useful for
+applications that don't want to make library calls, but still want to
+access the statistics.
 
-An example of such an application is mrtg, for which scripts are provided to
-generate configuration files.
+An example of such an application is mrtg, for which scripts are
+provided to generate configuration files.
+
+%description -n statgrab -l pl
+statgrab udostêpnia podobny do sysctl interfejs do wszystkich
+statystyk systemu dostêpnych poprzez libstatgrab. Jest to przydatne
+dla aplikacji nie chc±cych wykonywaæ wywo³añ bibliotecznych, ale
+chc±cych mieæ dostêp do statystyk.
+
+Przyk³adem takiej aplikacji jest mrtg, dla którego dostêpne s±
+skrypty do generowania plików konfiguracyjnych.
 
 %package -n saidar
 Summary:	A curses-based tool for viewing system statistics
+Summary(pl):	Oparte na curses narzêdzie do ogl±dania statystyk systemu
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
 %description -n saidar
-saidar is a curses-based tool for viewing the system statistics available
-through libstatgrab. Statistics include CPU, processes, load, memory, swap,
-network I/O, disk I/O, and file system information.
+saidar is a curses-based tool for viewing the system statistics
+available through libstatgrab. Statistics include CPU, processes,
+load, memory, swap, network I/O, disk I/O, and file system
+information.
+
+%description -n saidar -l pl
+saidar to oparte na curses narzêdzie do ogl±dania statystyk systemu
+dostêpnych poprzez libstatgrab. Statystyki obejmuj± informacje o
+procesorach, procesach, obci±¿eniu, pamiêci, swapie, operacjach we/wy
+sieciowych i dyskowych oraz systemach plików.
 
 %prep
 %setup -q
@@ -123,7 +142,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/*.pc
 %{_mandir}/man3/sg_*
 %{_mandir}/man3/statgrab*
-
 
 %files static
 %defattr(644,root,root,755)

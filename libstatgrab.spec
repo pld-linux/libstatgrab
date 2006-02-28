@@ -3,7 +3,7 @@ Summary(pl):	£atwy w u¿yciu interfejs dostêpu do statystyk i informacji o system
 Name:		libstatgrab
 Version:	0.12
 Release:	0.1
-License:	LGPL	
+License:	LGPL
 Group:		Libraries
 Source0:	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
 # Source0-md5:	fe8bf50490e3382c29da3a553bb7ca0e

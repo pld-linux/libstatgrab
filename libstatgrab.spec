@@ -1,5 +1,5 @@
 Summary:	Easy-to-use interface for accessing system statistics and information
-Summary(pl):	£atwy w u¿yciu interfejs dostêpu do statystyk i informacji o systemie
+Summary(pl.UTF-8):   Åatwy w uÅ¼yciu interfejs dostÄ™pu do statystyk i informacji o systemie
 Name:		libstatgrab
 Version:	0.14
 Release:	1
@@ -24,42 +24,42 @@ includes two tools: saidar provides a curses-based interface for
 viewing live system statistics, and statgrab is a sysctl-like
 interface to the statistics.
 
-%description -l pl
-Biblioteka libstatgrab dostarcza ³atwego w u¿yciu interfejsu dostêpu
-do informacji i statystyk systemowych. Dostêpne statystyki obejmuj±
-CPU, obci±¿enie, pamiêæ swap, dyskowe i sieciowe operacje we./wy. .
-libstatgrab zosta³ stworzony by dzia³aæ na linuksie, FreeBSD i
-Solarisie. Pakiet zawiera tak¿e dwa narzêdzia: saidar dostarcza
-bazuj±cego na curses interfejsu do przegl±dania statystyk systemu i
-statgrab, który jest interfejsem podobnym do sysctl dla statystyk.
+%description -l pl.UTF-8
+Biblioteka libstatgrab dostarcza Å‚atwego w uÅ¼yciu interfejsu dostÄ™pu
+do informacji i statystyk systemowych. DostÄ™pne statystyki obejmujÄ…
+CPU, obciÄ…Å¼enie, pamiÄ™Ä‡ swap, dyskowe i sieciowe operacje we./wy. .
+libstatgrab zostaÅ‚ stworzony by dziaÅ‚aÄ‡ na linuksie, FreeBSD i
+Solarisie. Pakiet zawiera takÅ¼e dwa narzÄ™dzia: saidar dostarcza
+bazujÄ…cego na curses interfejsu do przeglÄ…dania statystyk systemu i
+statgrab, ktÃ³ry jest interfejsem podobnym do sysctl dla statystyk.
 
 %package devel
 Summary:	Header files for libstatgrab library
-Summary(pl):	Pliki nag³ówkowe biblioteki libstatgrab
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe biblioteki libstatgrab
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Header files for libstatgrab library.
 
-%description devel -l pl
-Pliki nag³ówkowe biblioteki libstatgrab.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe biblioteki libstatgrab.
 
 %package static
 Summary:	Static libstatgrab library
-Summary(pl):	Statyczna biblioteka libstatgrab
+Summary(pl.UTF-8):   Statyczna biblioteka libstatgrab
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static libstatgrab library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka libstatgrab.
 
 %package -n statgrab
 Summary:	sysctl-style interface to system statistics
-Summary(pl):	Podobny do sysctl interfejs do statystyk systemu
+Summary(pl.UTF-8):   Podobny do sysctl interfejs do statystyk systemu
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
@@ -72,18 +72,18 @@ access the statistics.
 An example of such an application is mrtg, for which scripts are
 provided to generate configuration files.
 
-%description -n statgrab -l pl
-statgrab udostêpnia podobny do sysctl interfejs do wszystkich
-statystyk systemu dostêpnych poprzez libstatgrab. Jest to przydatne
-dla aplikacji nie chc±cych wykonywaæ wywo³añ bibliotecznych, ale
-chc±cych mieæ dostêp do statystyk.
+%description -n statgrab -l pl.UTF-8
+statgrab udostÄ™pnia podobny do sysctl interfejs do wszystkich
+statystyk systemu dostÄ™pnych poprzez libstatgrab. Jest to przydatne
+dla aplikacji nie chcÄ…cych wykonywaÄ‡ wywoÅ‚aÅ„ bibliotecznych, ale
+chcÄ…cych mieÄ‡ dostÄ™p do statystyk.
 
-Przyk³adem takiej aplikacji jest mrtg, dla którego dostêpne s±
-skrypty do generowania plików konfiguracyjnych.
+PrzykÅ‚adem takiej aplikacji jest mrtg, dla ktÃ³rego dostÄ™pne sÄ…
+skrypty do generowania plikÃ³w konfiguracyjnych.
 
 %package -n saidar
 Summary:	A curses-based tool for viewing system statistics
-Summary(pl):	Oparte na curses narzêdzie do ogl±dania statystyk systemu
+Summary(pl.UTF-8):   Oparte na curses narzÄ™dzie do oglÄ…dania statystyk systemu
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
@@ -93,11 +93,11 @@ available through libstatgrab. Statistics include CPU, processes,
 load, memory, swap, network I/O, disk I/O, and file system
 information.
 
-%description -n saidar -l pl
-saidar to oparte na curses narzêdzie do ogl±dania statystyk systemu
-dostêpnych poprzez libstatgrab. Statystyki obejmuj± informacje o
-procesorach, procesach, obci±¿eniu, pamiêci, swapie, operacjach we/wy
-sieciowych i dyskowych oraz systemach plików.
+%description -n saidar -l pl.UTF-8
+saidar to oparte na curses narzÄ™dzie do oglÄ…dania statystyk systemu
+dostÄ™pnych poprzez libstatgrab. Statystyki obejmujÄ… informacje o
+procesorach, procesach, obciÄ…Å¼eniu, pamiÄ™ci, swapie, operacjach we/wy
+sieciowych i dyskowych oraz systemach plikÃ³w.
 
 %prep
 %setup -q

@@ -1,5 +1,5 @@
 Summary:	Easy-to-use interface for accessing system statistics and information
-Summary(pl.UTF-8):   Łatwy w użyciu interfejs dostępu do statystyk i informacji o systemie
+Summary(pl.UTF-8):	Łatwy w użyciu interfejs dostępu do statystyk i informacji o systemie
 Name:		libstatgrab
 Version:	0.14
 Release:	1
@@ -35,7 +35,7 @@ statgrab, który jest interfejsem podobnym do sysctl dla statystyk.
 
 %package devel
 Summary:	Header files for libstatgrab library
-Summary(pl.UTF-8):   Pliki nagłówkowe biblioteki libstatgrab
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libstatgrab
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -47,7 +47,7 @@ Pliki nagłówkowe biblioteki libstatgrab.
 
 %package static
 Summary:	Static libstatgrab library
-Summary(pl.UTF-8):   Statyczna biblioteka libstatgrab
+Summary(pl.UTF-8):	Statyczna biblioteka libstatgrab
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -59,7 +59,7 @@ Statyczna biblioteka libstatgrab.
 
 %package -n statgrab
 Summary:	sysctl-style interface to system statistics
-Summary(pl.UTF-8):   Podobny do sysctl interfejs do statystyk systemu
+Summary(pl.UTF-8):	Podobny do sysctl interfejs do statystyk systemu
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
@@ -83,7 +83,7 @@ skrypty do generowania plików konfiguracyjnych.
 
 %package -n saidar
 Summary:	A curses-based tool for viewing system statistics
-Summary(pl.UTF-8):   Oparte na curses narzędzie do oglądania statystyk systemu
+Summary(pl.UTF-8):	Oparte na curses narzędzie do oglądania statystyk systemu
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 

@@ -3,13 +3,13 @@ Summary(pl.UTF-8):	Łatwy w użyciu interfejs dostępu do statystyk i informacji
 Name:		libstatgrab
 Version:	0.17
 Release:	1
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
 # Source0-md5:	58385c9392898be3b09ffc5e3ebe8717
 Patch0:		%{name}-Makefile_fix.patch
 URL:		http://www.i-scream.org/libstatgrab/
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
 BuildRequires:	libtool
 BuildRequires:	linux-libc-headers >= 7:2.6.11.1-2
@@ -60,6 +60,7 @@ Statyczna biblioteka libstatgrab.
 %package -n statgrab
 Summary:	sysctl-style interface to system statistics
 Summary(pl.UTF-8):	Podobny do sysctl interfejs do statystyk systemu
+License:	GPL v2+
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
@@ -84,6 +85,7 @@ skrypty do generowania plików konfiguracyjnych.
 %package -n saidar
 Summary:	A curses-based tool for viewing system statistics
 Summary(pl.UTF-8):	Oparte na curses narzędzie do oglądania statystyk systemu
+License:	GPL v2+
 Group:		Applications/System
 Requires:	%{name} = %{version}-%{release}
 
@@ -131,27 +133,27 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README PLATFORMS
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %{_libdir}/libstatgrab.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libstatgrab.so.6
 
 %files devel
 %defattr(644,root,root,755)
 %doc examples/*.c
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
-%{_pkgconfigdir}/*.pc
-%{_mandir}/man3/sg_*
-%{_mandir}/man3/statgrab*
+%attr(755,root,root) %{_libdir}/libstatgrab.so
+%{_libdir}/libstatgrab.la
+%{_includedir}/statgrab*.h
+%{_pkgconfigdir}/libstatgrab.pc
+%{_mandir}/man3/sg_get_*.3*
+%{_mandir}/man3/statgrab.3*
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libstatgrab.a
 
 %files -n statgrab
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/statgrab*
-%{_mandir}/man1/statgrab*
+%{_mandir}/man1/statgrab*.1*
 
 %files -n saidar
 %defattr(644,root,root,755)

@@ -1,12 +1,12 @@
 Summary:	Easy-to-use interface for accessing system statistics and information
 Summary(pl.UTF-8):	Łatwy w użyciu interfejs dostępu do statystyk i informacji o systemie
 Name:		libstatgrab
-Version:	0.17
-Release:	3
+Version:	0.91
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	ftp://ftp.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/%{name}-%{version}.tar.gz
-# Source0-md5:	58385c9392898be3b09ffc5e3ebe8717
+# Source0-md5:	b906d312076ca9be3d5188edfe07f496
 Patch0:		%{name}-Makefile_fix.patch
 URL:		http://www.i-scream.org/libstatgrab/
 BuildRequires:	autoconf >= 2.57
@@ -134,7 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README PLATFORMS
 %attr(755,root,root) %{_libdir}/libstatgrab.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libstatgrab.so.6
+%attr(755,root,root) %ghost %{_libdir}/libstatgrab.so.10
 
 %files devel
 %defattr(644,root,root,755)
@@ -143,7 +143,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libstatgrab.la
 %{_includedir}/statgrab*.h
 %{_pkgconfigdir}/libstatgrab.pc
-%{_mandir}/man3/sg_get_*.3*
+%{_mandir}/man3/libstatgrab.3*
+%{_mandir}/man3/sg_*.3*
 %{_mandir}/man3/statgrab.3*
 
 %files static

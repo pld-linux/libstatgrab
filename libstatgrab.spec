@@ -1,19 +1,25 @@
+#
+# Conditional build:
+%bcond_without	log4cplus	# log4cplus based logging
+
 Summary:	Easy-to-use interface for accessing system statistics and information
 Summary(pl.UTF-8):	Łatwy w użyciu interfejs dostępu do statystyk i informacji o systemie
 Name:		libstatgrab
-Version:	0.92
+Version:	0.92.1
 Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/libstatgrab/libstatgrab/releases/
-Source0:	https://github.com/libstatgrab/libstatgrab/releases/download/LIBSTATGRAB_0_92/%{name}-%{version}.tar.gz
-# Source0-md5:	5362b2ddbec54b3901e7d70c22cda249
+Source0:	https://github.com/libstatgrab/libstatgrab/releases/download/LIBSTATGRAB_0_92_1/%{name}-%{version}.tar.gz
+# Source0-md5:	af685494e985229e0ac46365bc0cd50e
 Patch0:		%{name}-Makefile_fix.patch
 URL:		https://libstatgrab.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake
 BuildRequires:	libtool >= 2:2
 BuildRequires:	linux-libc-headers >= 7:2.6.11.1-2
+%{?with_log4cplus:BuildRequires:	log4cplus-devel >= 1.0.5}
+%{?with_log4cplus:Requires:	log4cplus >= 1.0.5}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,6 +45,7 @@ Summary:	Header files for libstatgrab library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libstatgrab
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+%{?with_log4cplus:Requires:	log4cplus-devel >= 1.0.5}
 
 %description devel
 Header files for libstatgrab library.
@@ -116,7 +123,9 @@ sieciowych i dyskowych oraz systemach plików.
 	--with-curses-prefix=/usr \
 	--with-ncurses \
 	--disable-setgid-binaries \
-	--disable-setuid-binaries
+	--disable-setuid-binaries \
+	%{?with_log4cplus:--enable-logging}
+
 %{__make}
 
 %install
@@ -124,6 +133,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+# obsoleted by pkg-config
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/libstatgrab.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -141,7 +153,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc examples/*.c
 %attr(755,root,root) %{_libdir}/libstatgrab.so
-%{_libdir}/libstatgrab.la
 %{_includedir}/statgrab*.h
 %{_pkgconfigdir}/libstatgrab.pc
 %{_mandir}/man3/libstatgrab.3*
@@ -155,9 +166,15 @@ rm -rf $RPM_BUILD_ROOT
 %files -n statgrab
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/statgrab*
+%if %{with log4cplus}
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/statgrab.properties
+%endif
 %{_mandir}/man1/statgrab*.1*
 
 %files -n saidar
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/saidar
+%if %{with log4cplus}
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/saidar.properties
+%endif
 %{_mandir}/man1/saidar.1*

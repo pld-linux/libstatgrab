@@ -12,7 +12,6 @@ Group:		Libraries
 #Source0Download: https://github.com/libstatgrab/libstatgrab/releases/
 Source0:	https://github.com/libstatgrab/libstatgrab/releases/download/LIBSTATGRAB_0_92_1/%{name}-%{version}.tar.gz
 # Source0-md5:	af685494e985229e0ac46365bc0cd50e
-Patch0:		%{name}-Makefile_fix.patch
 URL:		https://libstatgrab.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake
@@ -111,7 +110,6 @@ sieciowych i dyskowych oraz systemach plików.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__libtoolize}

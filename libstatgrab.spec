@@ -6,7 +6,7 @@ Summary:	Easy-to-use interface for accessing system statistics and information
 Summary(pl.UTF-8):	Łatwy w użyciu interfejs dostępu do statystyk i informacji o systemie
 Name:		libstatgrab
 Version:	0.92.1
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/libstatgrab/libstatgrab/releases/

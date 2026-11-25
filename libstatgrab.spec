@@ -5,13 +5,13 @@
 Summary:	Easy-to-use interface for accessing system statistics and information
 Summary(pl.UTF-8):	Łatwy w użyciu interfejs dostępu do statystyk i informacji o systemie
 Name:		libstatgrab
-Version:	0.92.1
-Release:	2
+Version:	0.92.2
+Release:	1
 License:	LGPL v2.1+
 Group:		Libraries
 #Source0Download: https://github.com/libstatgrab/libstatgrab/releases/
-Source0:	https://github.com/libstatgrab/libstatgrab/releases/download/LIBSTATGRAB_0_92_1/%{name}-%{version}.tar.gz
-# Source0-md5:	af685494e985229e0ac46365bc0cd50e
+Source0:	https://github.com/libstatgrab/libstatgrab/releases/download/LIBSTATGRAB_0_92_2/%{name}-%{version}.tar.gz
+# Source0-md5:	23bb040c945962a1ef5cc6220de64140
 URL:		https://libstatgrab.org/
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake
